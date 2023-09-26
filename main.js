@@ -1,8 +1,8 @@
 import { CLOSE_ICON, MESSAGE_ICON, styles} from "./asset"
 
 class MessageWidget {
-  constructor(position = "bottom-right") {  
-    
+  constructor(position,uuid) {  
+    console.log(uuid)
     this.position = this.getPosition(position);
     this.open = false;
     this.initialize();
@@ -122,11 +122,11 @@ class MessageWidget {
   }
 }
 
-function initializeWidget() {
-  return new MessageWidget();
+function initializeWidget(uuid) {
+  return new MessageWidget("bottom-right",uuid);
 }
 
-initializeWidget();
+initializeWidget("123123123");
 
 const chatInput = document.querySelector("#textarea");
 const sendChatBtn = document.querySelector("#send-btn");
